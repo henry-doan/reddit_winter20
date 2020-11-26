@@ -89,6 +89,7 @@ class SubsController < ApplicationController
   # Sub 
   def index
     @subs = Sub.all 
+    # render index.html.erb
   end
 
   def show
@@ -134,6 +135,8 @@ class SubsController < ApplicationController
   end
 
   private 
+    # { sub: {name: 'turkey'}} permitted
+    # { sub: {name: 'turkey', age: 11}} not permitted
     def sub_params
       params.require(:sub).permit(:name)
     end
